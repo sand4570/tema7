@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+     <p>Gæt et tal</p>
+    <input type="text" id="gæt">
+
+    <button>Klik og kik i konsollen</button>
+    <script>
+        let tal = Math.round(Math.random()*20);
+        let count = 0;
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let gæt = document.querySelector("#gæt").value;
+            let resultat;
+            count++;
+
+            if (gæt == tal) {
+                resultat = `Du har gættet rigtigt! Du brugte  ${count} forsøg, vil du prøve igen?`
+            } else if (gæt < tal) {
+                resultat= `Du har gættet forkert, dit tal var for lavt`;
+            } else {
+                resultat = `Du har gættet forkert dit tal var for højt`;
+            }
+            console.log(resultat);
+        }
+
+    </script>
+</body>
+
+</html>
