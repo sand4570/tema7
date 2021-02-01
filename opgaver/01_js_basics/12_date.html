@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Indsæt din alder her?</p>
+    <input type="text" id="dig">
+
+    <p>Indsæt alderen på din date</p>
+    <input type="text" id="date">
+
+    <button>Klik og kik i konsollen</button>
+
+    <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+            let dig = document.querySelector("#dig").value;
+            let date = document.querySelector("#date").value;
+            let age1 = (dig / 2) + 7;
+            let age2 = (date / 2) + 7;
+            let resultat;
+
+            console.log(age1, "age1")
+            console.log(age2, "age2")
+
+            if (dig < 15 || date < 15) {
+                resultat = "En eller flere personer er under 15 og må ikke date";
+            } else if (date < age1) {
+                resultat = "Din date er under den passende alder for dating";
+            } else if (dig < age2) {
+                resultat = "Din date er over den passende alder for dating";
+            } else {
+                resultat = "Din date er en passende alder for dating";
+            }
+
+            console.log(resultat);
+        }
+
+        function age(dig,date) {
+            return (d / 2) + 7;
+        }
+    </script>
+</body></html>
