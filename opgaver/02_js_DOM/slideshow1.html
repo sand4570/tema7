@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="styleslide.css">
 </head>
 
 <body>
@@ -29,11 +28,24 @@
 
 
     <script>
-        const playlist = ["images/Tema7E20/billeder/img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+        const kategori = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
 
-        let tal = 1;
+        const pic = document.querySelector("article img");
+        let tal = 0;
 
-        const pic = document.querySelector("")
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            document.querySelector("button").addEventListener("click", click);
+        }
+
+        function click() {
+            console.log(click);
+            tal++;
+            pic.src = "images/Tema7E20/billeder/" + kategori[tal];
+            pic.alt = kategori[tal];
+        }
+
 
 
 
