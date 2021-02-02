@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <h1>Playlist</h1>
+    <ul id="display"></ul>
+
+
+    <script>
+        const playlist = ["Head & Heart", "Blinding Lights", "Solhverv", "Roses", "Breaking Me", "Say So", "Some Say", "La Danza", "Don´t Start Now", "Ghost"];
+
+
+
+
+        playlist.forEach(visHvertElement)
+
+        function visHvertElement(element) {
+            console.log(element);
+
+            document.querySelector('#display').innerHTML += '<li>' + element + '</li>';
+
+        }
+    </script>
+</body></html>
