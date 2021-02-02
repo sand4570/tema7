@@ -31,6 +31,17 @@
     </main>
 
     <script>
+        let article3 = document.createElement("article");
+        let img = document.createElement("img")
+        img.src="https://placeimg.com/640/480/animals"
+        let txt = document.createElement("p");
+        let node = document.createTextNode("Billedtekst til det nye billede");
+        txt.appendChild(node);
+        article3.appendChild(img);
+        article3.appendChild(txt);
+
+
+
         const titel = document.querySelector("header");
         console.log(titel);
         titel.innerHTML = "<h1>Billedegalleri</h1>";
@@ -57,8 +68,21 @@
         console.log(p2);
         p2.innerHTML = "<p>Her er <i>billedtekst</i> ved brug af <b>innerHTML</b></p>"
 
+        const section = document.querySelector("section");
+        console.log(section);
+        section.appendChild(article3);
+
+
         const footer = document.querySelector("footer");
         console.log(footer);
+
+
+//        titel.textContent = "Billedegalleri";
+//        titel.innerHTML = "<h1>Billedegalleri</h1>";
+//
+//        const pic1 = document.querySelector("article:first-child img")
+//        console.log(pic1);
+//        pic1.alt = "anden tekst end før";
 
     </script>
 </body>
