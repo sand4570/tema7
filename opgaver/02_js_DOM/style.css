@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+}
+
+img{
+    width: 100%;
+}
+
+header {
+    border: solid;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article {
+    border: solid;
+    flex-grow: 1;
+    flex-basis: 400px;
+    margin: 5px;
+}
+
+footer {
+    border: solid;
+    text-align: center;
+}
