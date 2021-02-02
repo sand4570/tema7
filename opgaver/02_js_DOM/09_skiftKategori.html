@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article id="article1">
+                <img src="https://placeimg.com/640/480/nature" alt="random placeholder image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac luctus est. Aliquam vitae leo consectetur, aliquet urna quis, vulputate ex. Quisque a laoreet diam. Proin finibus et magna sit amet condimentum. Aenean rutrum semper justo, vel efficitur mi dignissim ac. Proin nisl enim, ornare quis luctus eget, dictum nec.</p>
+            </article>
+            <article id="article2">
+                <img src="https://placeimg.com/640/480/arch" alt="random placeholder image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac luctus est. Aliquam vitae leo consectetur, aliquet urna quis, vulputate ex. Quisque a laoreet diam. Proin finibus et magna sit amet condimentum. Aenean rutrum semper justo, vel efficitur mi dignissim ac. Proin nisl enim, ornare quis luctus eget, dictum nec.</p>
+            </article>
+        </section>
+        <footer>
+            <p>This is the footer</p>
+        </footer>
+    </main>
+
+    <script>
+
+        const kategori = ["animals", "arch", "people", "nature", "tech"];
+
+        let tal = Math.round((Math.random()*10)+1);
+
+        const pic1 = document.querySelector("#article1:first-child img")
+        const pic2 = document.querySelector("#article2 img");
+
+        document.addEventListener("DOMContentLoaded", changes);
+
+        function changes() {
+
+            let article3 = document.createElement("article");
+            let img = document.createElement("img")
+            img.src = "https://placeimg.com/640/480/animals"
+            let txt = document.createElement("p");
+            let node = document.createTextNode("Billedtekst til det nye billede");
+            txt.appendChild(node);
+            article3.appendChild(img);
+            article3.appendChild(txt);
+
+            const titel = document.querySelector("header");
+            console.log(titel);
+            titel.innerHTML = "<h1>Billedegalleri</h1>";
+
+            const h2 = document.querySelector("h2")
+            console.log(h2);
+            h2.innerHTML = "<h2>Her er 2 billeder</h2>"
+
+            pic1.addEventListener("click", click);
+            console.log(pic1);
+
+
+            const p1 = document.querySelector("#article1 p");
+            console.log(p1);
+            p1.textContent = "Her er billedetekst ved brud af textContent";
+
+
+            pic2.addEventListener("click", skift);
+            console.log(pic2);
+
+            const p2 = document.querySelector("#article2 p");
+            console.log(p2);
+            p2.innerHTML = "<p>Her er <i>billedtekst</i> ved brug af <b>innerHTML</b></p>"
+
+            const section = document.querySelector("section");
+            console.log(section);
+            section.appendChild(article3);
+
+
+            const footer = document.querySelector("footer");
+            console.log(footer);
+        }
+
+        function click() {
+            pic1.src = "https://placeimg.com/640/480/arch" + tal;
+            pic1.alt = "Udskiftet alt tekst";
+        }
+
+        function skift() {
+            console.log(skift);
+            const tal = Math.round(Math.random()*4);
+            pic2.src = "https://placeimg.com/640/480/" + kategori[tal];
+            pic2.alt = kategori[tal];
+        }
+
+
+        //        titel.textContent = "Billedegalleri";
+        //        titel.innerHTML = "<h1>Billedegalleri</h1>";
+        //
+        //        const pic1 = document.querySelector("article:first-child img")
+        //        console.log(pic1);
+        //        pic1.alt = "anden tekst end før";
+    </script>
+</body></html>
