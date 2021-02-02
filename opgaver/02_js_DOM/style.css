@@ -1,8 +1,8 @@
-body{
+body {
     margin: 0;
 }
 
-img{
+img {
     width: 100%;
 }
 
@@ -22,6 +22,13 @@ article {
     flex-grow: 1;
     flex-basis: 400px;
     margin: 5px;
+
+}
+
+.boxShadow {
+     box-shadow: 4px 5px 5px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px 5px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 5px 5px 1px rgba(0, 0, 0, 0.75);
 }
 
 footer {
