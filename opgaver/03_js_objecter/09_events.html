@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        img{
+            max-width: 100%;
+        }
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,
+            minmax(240px,1fr));
+            grid-gap: 15px;
+        }
+
+        li {
+            display: inline;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <section class="data-container"></section>
+    <template>
+        <article>
+            <img src="" alt="">
+            <h3></h3>
+            <ul class="info-liste"></ul>
+        </article>
+    </template>
+
+    <script>
+        let container = document.querySelector(".data-container");
+        let temp = document.querySelector("template");
+
+        const fil = "events.json";
+
+        async function hentdata(fil) {
+            const resultat = await fetch(fil);
+            const json = await resultat.json();
+            vis(json);
+        }
+
+        function vis(events) {
+            console.log("test");
+
+            events.forEach(event => {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("img").src = event.billede;
+                klon.querySelector("h3").textContent = event.navn;
+
+                event.info.forEach(info => {
+                    klon.querySelector(".info-liste").innerHTML += "<li>" + '  |  ' + info + `  |  ` + "</li>"
+                })
+
+                container.appendChild(klon);
+            })
+
+        }
+        hentdata(fil);
+    </script>
+</body></html>

@@ -1,0 +1,27 @@
+[
+    {
+        "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-360.jpg",
+        "navn": "A Calling",
+        "info": ["Christian Bengtson","Danmark","20 min","2019"]
+    },
+    {
+        "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+        "navn": "A Hole In My Heart",
+        "info": ["Mees Peijnenburg","Holland","9 min","2015"]
+    },
+    {
+        "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-360.jpg",
+        "navn": "A Place In The Sun - 110 years after the genocide",
+        "info": ["Christian Zipfel","Tyskland","20 min","2018"]
+    },
+    {
+        "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd-360.jpg",
+        "navn": "A Tower of Two",
+        "info": ["Jacob Krzysztof Glogowski","Danmark","21 min","2019"]
+    },
+    {
+        "billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/2iUOgQpixgIQCxyLtY6KiYuU-360.jpg",
+        "navn": "A Worthy Man",
+        "info": ["Kristian Håskjold","Danmark","19 min","2018"]
+    }
+]
