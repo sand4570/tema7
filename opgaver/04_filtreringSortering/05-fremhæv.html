@@ -86,6 +86,9 @@
         function filterPersoner() {
             filter = this.dataset.troende;
 
+            document.querySelector(".valgt").classList.remove("valgt");
+            this.classList.add("valgt");
+
             visPersoner();
             header.textContent = this.textContent;
         }
