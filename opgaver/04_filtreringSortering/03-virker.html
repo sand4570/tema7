@@ -44,7 +44,7 @@
     <nav>
         <button data-troende="alle" class="valgt">Alle</button>
         <button data-troende="ja">Troende</button>
-        <button data-troende="nek">Ikke troende</button>
+        <button data-troende="nej">Ikke troende</button>
         <button data-troende="tvivler">Tvivler</button>
     </nav>
 
@@ -72,8 +72,16 @@
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
+            const filterknapper = document.querySelectorAll("nav button");
+            filterknapper.forEach(knap => knap.addEventListener("click", filterPerson));
 
             loadJSON();
+        }
+
+        function filterPerson() {
+            filter = this.dataset.troende;
+
+            visPersoner();
         }
 
         async function loadJSON() {
@@ -90,9 +98,11 @@
 
             const dest = document.querySelector("#liste"); // container til articles med en person
             const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+            dest.textContent = "";
+
 
             personer.forEach(person => {
-                if (filter == person.troende) {
+                if (filter == person.troende || filter == "alle") {
                     // loop igennem json (personer)
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
