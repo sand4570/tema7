@@ -14,6 +14,15 @@
             width: 100%;
         }
 
+        nav {
+            position: absolute;
+            top: 5px;
+        }
+
+        .valgt {
+            background-color: red;
+        }
+
         #liste {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -31,6 +40,13 @@
 </head>
 
 <body>
+
+    <nav>
+        <button data-troende="alle">Alle</button>
+        <button data-troende="ja" class="valgt">Troende</button>
+        <button data-troende="nek">Ikke troende</button>
+        <button data-troende="tvivler">Tvivler</button>
+    </nav>
 
     <section id="liste"></section>
 
@@ -52,7 +68,7 @@
         }
         document.addEventListener("DOMContentLoaded", start)
         let personer;
-        let filter ="ja";
+        let filter = "ja";
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
@@ -77,13 +93,12 @@
 
             personer.forEach(person => {
                 if (filter == person.troende) {
-                  // loop igennem json (personer)
-                const klon = skabelon.cloneNode(true);
-                klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
-                klon.querySelector(".profil-billede").src = medieurl + person.billede;
-                dest.appendChild(klon);
+                    // loop igennem json (personer)
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+                    klon.querySelector(".profil-billede").src = medieurl + person.billede;
+                    dest.appendChild(klon);
                 }
-
 
             })
         }
