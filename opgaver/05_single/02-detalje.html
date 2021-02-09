@@ -42,8 +42,8 @@
             const JSONData = await fetch(`https://persongalleri-5d3e.restdb.io/rest/persongalleri/${id}`, {
                 headers: myHeaders
             });
-            personer = await JSONData.json();
-            console.log("Personer", personer);
+            person = await JSONData.json();
+            console.log("Personer", person);
             visPersoner();
         }
 
