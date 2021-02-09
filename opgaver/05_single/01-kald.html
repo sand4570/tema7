@@ -117,10 +117,15 @@
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
                     klon.querySelector(".profil-billede").src = medieurl + person.billede;
+                    klon.querySelector(".person").addEventListener("click", () => visDetaljer(person));
                     dest.appendChild(klon);
                 }
 
             })
+        }
+
+        function visDetaljer(hvem) {
+            location.href = `02-detalje.html?id=${hvem._id}`;
         }
     </script>
 </body></html>
